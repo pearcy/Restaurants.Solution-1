@@ -4,9 +4,9 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
-using Restaurants.Models;
+using RestBestaurants.Models;
 
-namespace Restaurants
+namespace RestBestaurants
 {
   public class Startup
   {
