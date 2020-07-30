@@ -13,6 +13,8 @@
 }
 
 @foreach (Restaurant restaurant in @Model.Restaurants)
+@* @foreach (Restaurant restaurant in @ViewBag.RestaurantList) *@
+
 
 {
   <li>Name: @restaurant.Name</li>
