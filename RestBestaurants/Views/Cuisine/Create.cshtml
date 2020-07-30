@@ -2,13 +2,13 @@
   Layout = "_Layout";
 }
 
-@model RestBestaurants.Models.Category
+@model RestBestaurants.Models.Cuisine
 
 <h4>Add a new Cuisine category</h4>
 @using (Html.BeginForm())
 {
-    @Html.LabelFor(model => model.Description)
-    @Html.TextBoxFor(model => model.Description)
+    @Html.LabelFor(model => model.Name)
+    @Html.TextBoxFor(model => model.Name)
     <input type="submit" value="Add new cuisine" />
 }
 <p>@Html.ActionLink("Show all cuisines", "Index")</p>

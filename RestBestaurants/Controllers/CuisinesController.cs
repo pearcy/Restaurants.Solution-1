@@ -10,13 +10,13 @@ namespace RestBestaurants.Controllers
   {
     private readonly RestBestaurantsContext _db;
 
-    public RestBestaurantsControllers(RestBestaurantsContext db)
+    public CuisinesController(RestBestaurantsContext db)
     {
       _db = db;
     }
     public ActionResult Index()
     {
-      List<Cuisine> model = _db.Description.ToList();
+      List<Cuisine> model = _db.Cuisines.ToList();
       return View(model);
     }
     public ActionResult Create()
@@ -26,19 +26,19 @@ namespace RestBestaurants.Controllers
     [HttpPost]
     public ActionResult Create(Cuisine cuisine)
     {
-      _db.Categories.Add(cuisine);
+      _db.Cuisines.Add(cuisine);
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
 
     public ActionResult Details(int id)
     {
-      Cuisine thisCuisine = _db.Cuisines.FirstOrDefault(cuisines => cuisines.CuisinesId == id);
+      Cuisine thisCuisine = _db.Cuisines.FirstOrDefault(cuisines => cuisines.CuisineId == id);
       return View(thisCuisine);
     }
     public ActionResult Edit(int id)
     {
-      var thisCuisine = _db.Cuisines.FirstOrDefault(cuisines => cuisines.CuisinesId == id);
+      var thisCuisine = _db.Cuisines.FirstOrDefault(cuisines => cuisines.CuisineId == id);
       return View(thisCuisine);
     }
   }
