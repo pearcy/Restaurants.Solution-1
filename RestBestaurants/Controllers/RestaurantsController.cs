@@ -17,7 +17,7 @@ namespace RestBestaurants.Controllers
     }
     public ActionResult Index()
     {
-      List<Restaurant> model = _db.Restaurants.Include(restaurnts => restaurnts.Cuisine).ToList();
+      List<Restaurant> model = _db.Restaurants.Include(restaurants => restaurants.Cuisine).ToList();
       return View(model);
     }
 
