@@ -14,6 +14,14 @@ namespace RestBestaurants.Controllers
     {
       _db = db;
     }
-    
+    public ActionResult Index()
+    {
+      List<Cuisine> model = _db.Description.ToList();
+      return View(model);
+    }
+    public ActionResult Create()
+    {
+      return View();
+    }
   }
 }
